@@ -1,0 +1,40 @@
+{
+  "manifest_version": 2,
+  "name": "Web Recorder",
+  "description": "This extension records user's movement to a page and make automation tests",
+  "version": "1.0",
+  "author": "Dimitris Niras",
+  "incognito": "not_allowed",
+  "browser_action": {
+	"default_title": "Web Recorder",
+    "default_icon": "icon16.png",
+    "default_popup": "popup.html"
+  },
+  "icons" : {
+	"128": "icon64.png",
+	"64": "icon64.png",
+	"24": "icon24.png",
+	"16": "icon16.png"
+  },
+  "permissions": [
+	"unlimitedStorage",
+	"storage",
+	"webNavigation",
+    "activeTab",
+	"background",
+	"tabs",
+	"notifications",
+	"http://*/*",
+	"https://*/*"
+  ],
+  "background": {
+	"scripts": ["jquery-3.2.1.min.js", "background.js"],
+	"persistent": true
+  },
+  "content_scripts": [
+	{
+		"matches": ["http://*/*", "https://*/*"],
+		"js": ["jquery-3.2.1.min.js", "jquery.dom-outline-1.0.js", "content.js"]
+	}
+  ]
+}

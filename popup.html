@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+		.container {width:300px; margin:0; padding:10px; font-size:13px; color:#333}
+		.container.header {background-color:#88c3a6; background-color:#333; color:#fff; font-weight:400; font-size:17px}
+		.container.header *{vertical-align:text-bottom}
+		.screen {display:none}
+    </style>
+  </head>
+  <body>
+	<div class="container header">
+		<img src="icon24.png" align="right">Web Recorder
+	</div>
+	<div class="container">
+		<div id="scr-login" class="screen">
+			<form id="form-login" action="" method="post" autocomplete="off">
+				<div class="form-group">
+					<label for="fld-email">E-mail:</label>
+					<input id="fld-email" class="form-control" type="email" placeholder="Email" name="email" required>
+				</div>
+				<div class="form-group">
+					<label for="fld-password">Password:</label>
+					<input id="fld-password" class="form-control" type="password" placeholder="Password" name="password" required>
+				</div>
+				<button id="btn-login" class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+				<a id="signup" href="http://snf-750380.vm.okeanos.grnet.gr:8080/sign-up" style="float: right; text-decoration: underline; margin: 3px;" target="_blank">Create a Web Recorder Account</a>
+			</form>
+		</div>
+		<div id="scr-error-login" class="screen">
+			<p id="error-login-alert" class="alert alert-danger" role="alert">Incorrect Email or Password.</p>
+			<button id="btn-error-login" class="btn btn-primary btn-lg btn-block" type="button">Try Again</button>
+		</div>
+		<div id="scr-start" class="screen">
+			<p class="lead">Click the <strong>Record</strong> button in order to start recording.</p>
+			<button id="btn-start" class="btn btn-danger btn-lg btn-block" type="button">Record</button>
+			<a id="signout" href="#" style="float: right; text-decoration: underline; color: red; margin: 3px;">Logout</a>
+		</div>
+		<div id="scr-recording" class="screen">
+			<p class="lead">You are currently <strong>recording.</strong></p>
+			<p>
+				<button id="btn-operations" class="btn btn-primary" disabled="disabled" type="button" style="white-space: normal;">Record Operations</button>
+				<button id="btn-assertions" class="btn btn-primary" type="button" style="white-space: normal;">Make Assertions</button>
+			</p>
+			<button id="btn-done"  class="btn btn-success btn-lg btn-block" type="button">Finish Recording</button>
+			<a id="cancel-record" href="#" style="float: right; text-decoration: underline; color: red; margin: 3px;">Cancel Recording</a>	
+		</div>
+		<div id="scr-save" class="screen">
+			<form id="form-save" action="" method="post" autocomplete="off">
+				<div class="form-group">
+					<label for="fld-name">Test Name:</label>
+					<input id="fld-name" class="form-control" type="text" placeholder="Test Name" name="name" required>
+				</div>
+				<div class="form-group">
+					<label for="fld-suite">Suite Name:</label>
+					<select id="fld-suite" class="selectpicker form-control"></select>
+				</div>
+				<div>
+					<button id="btn-save" class="btn btn-primary btn-lg btn-block" type="submit">Save This Test</button>	
+					<button id="btn-cancel-save" class="btn btn-danger btn-lg btn-block" type="button">Cancel recording</button>
+				</div>
+			</form>
+		</div>
+		<div id="scr-error-save" class="screen">
+			<p id="error-save-alert" class="alert alert-danger" role="alert">Test name is already in used.</p>
+			<button id="btn-error-save" class="btn btn-primary btn-lg btn-block" type="button">Try Again</button>
+		</div>
+		<div id="scr-result" class="screen">
+			<p class="lead">Your Test has been Uploaded!</p>
+			<a id="btn-result" class="btn btn-info btn-lg btn-block" target="_blank">View Your Test</a>
+		</div>
+	</div>
+	<footer>
+		<small>Icons made by <a href="http://www.flaticon.com/authors/pixel-buddha" title="Pixel Buddha" target="_blank">Pixel Buddha</a> from <a href="http://www.flaticon.com" title="Flaticon" target="_blank">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+		</small>
+	</footer>
+	
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="popup.js"></script>
+  </body>
+</html>
